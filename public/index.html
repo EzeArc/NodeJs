@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B-Chat</title>
+    <!--favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/b-chat-logo/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/b-chat-logo/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/b-chat-logo/favicon-16x16.png" />
+    <link rel="manifest" href="./assets/b-chat-logo/site.webmanifest" />
+    <!--Chat box styles-->
+    <link rel="stylesheet" href="./css/client.css" />
+    <!--Random user API-->
+    <script type="module" src="./client/client.js"></script>
+  </head>
+
+  <body>
+    <section id="chat">
+      <ul id="messages"></ul>
+      <form id="form">
+        <input
+          type="text"
+          name="message"
+          id="input"
+          placeholder="Type a message"
+          autocomplete="off"
+        />
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </body>
+</html>

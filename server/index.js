@@ -11,6 +11,8 @@ dotenv.config();
 const port = process.env.PORT ?? 3000;
 
 const app = express();
+app.use(express.static('public', { 'Content-Type': 'application/javascript' }));
+
 const server = createServer(app);
 const io = new Server(server, {
   connectionStateRecovery: {},
@@ -73,7 +75,11 @@ io.on("connection", async (socket) => {
 app.use(logger("dev"));
 
 app.get("/", (req, res) => {
-  res.sendFile(process.cwd() + "/client/index.html");
+  res.sendFile(process.cwd() + "/public/index.html");
+});
+
+app.get("public", (req, res) => {
+  res.sendFile(process.cwd() + "/public/client/client.js");
 });
 
 server.listen(port, () => {
